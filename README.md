@@ -5,4 +5,5 @@ Download bulk images, PDFs, mp3s, etc. from multiple URLs on a txt file, using P
 # Screenshots
 
 ![Run Program](https://github.com/ronknight/bulk_file_downloader/blob/master/assets/run-program.png)
+![Before Download](https://github.com/ronknight/bulk_file_downloader/blob/master/assets/before-download.png)
 ![After Download](https://github.com/ronknight/bulk_file_downloader/blob/master/assets/after-download.png)
