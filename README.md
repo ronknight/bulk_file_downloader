@@ -4,6 +4,10 @@ Download bulk images, PDFs, mp3s, etc. from multiple URLs on a txt file, using P
 # Usage
 
 ```bash
+pip install -r requirements.txt
+```
+
+```bash
 execute-download.py
 ```
 
