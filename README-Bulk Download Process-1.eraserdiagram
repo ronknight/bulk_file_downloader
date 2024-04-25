@@ -1,0 +1,35 @@
+flowchart-diagram
+
+
+title Bulk Download Process
+
+// Define groups and nodes
+Setup {
+  Install Dependencies [label: Install Required Python Packages, icon: package]
+  Check Python Version [label: Verify Python 3.x is Installed, icon: terminal]
+}
+
+Execution {
+  Read URLs [label: Read URLs from .txt File, icon: file-text]
+  Validate URLs [label: Validate Each URL, icon: check-circle]
+  Download Files [label: Download Files from URLs, icon: download-cloud]
+}
+
+Completion {
+  Verify Downloads [label: Check If All Files Are Downloaded, icon: file-check]
+  Error Handling [label: Handle Any Errors During Download, icon: alert-triangle]
+  Finish [label: End Process, shape: oval, icon: check-square]
+}
+
+// Define relationships
+Start [shape: oval] > Install Dependencies
+Install Dependencies > Check Python Version
+Check Python Version > Read URLs
+Read URLs > Validate URLs
+Validate URLs > Download Files
+Download Files > Verify Downloads
+Verify Downloads > Finish
+Download Files > Error Handling: On Error
+Error Handling > Finish
+
+
