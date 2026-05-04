@@ -1,7 +1,7 @@
 <p><a target="_blank" href="https://app.eraser.io/workspace/aS4lSWNHoIQeVO45UQSF" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
 
 <h1 align="center"><a href="https://github.com/ronknight/bulk_file_downloader">Bulk File Downloader</a></h1>
-<h4 align="center">Download bulk images, PDFs, mp3s, etc. from multiple URLs on a txt file, using Python 3.</h4>
+<h4 align="center">Robust bulk file downloader with streaming support, error handling, and progress tracking. Download images, PDFs, mp3s, and more from multiple URLs using Python 3.</h4>
 
 <p align="center">
 <a href="https://twitter.com/PinoyITSolution"><img src="https://img.shields.io/twitter/follow/PinoyITSolution?style=social"></a>
@@ -14,6 +14,8 @@
 </p>
 
 <p align="center">
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
   <a href="#screenshots">Screenshots</a> •
   <a href="#diagrams">Diagrams</a> •
@@ -21,14 +23,65 @@
 
 ---
 
-# Usage
+## Features
+
+✅ **Robust Streaming Downloads** - Efficient memory usage with chunked streaming  
+✅ **Comprehensive Error Handling** - Network timeouts, HTTP errors, and file I/O protection  
+✅ **Progress Tracking** - Real-time download progress with status indicators  
+✅ **Duplicate File Detection** - Automatically skips existing files  
+✅ **Timeout Protection** - 30-second timeout prevents hanging downloads  
+✅ **User-Friendly Output** - Clear success (✓) and error (✗) indicators  
+✅ **Bulk Processing** - Process hundreds of URLs from a simple text file  
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ronknight/bulk_file_downloader.git
+cd bulk_file_downloader
+```
+
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-```bash
-execute-download.py
+
+## Usage
+
+1. **Prepare your URLs**: Create a `files.txt` file with one URL per line:
 ```
+https://example.com/image1.jpg
+https://example.com/document.pdf
+https://example.com/audio.mp3
+```
+
+2. **Run the downloader**:
+```bash
+python main.py
+```
+
+3. **Example Output**:
+```
+Found 8 URLs to download...
+
+[1/8] downloading: https://www.4sgm.com/assets/Image/Product/thumb/30067.jpg
+  ✓ Successfully downloaded 30067.jpg
+
+[2/8] downloading: https://www.4sgm.com/assets/Image/Product/thumb/30061.jpg
+  30061.jpg already exists, skipping...
+
+✓ Completed processing 8 URLs.
+```
+
+### Supported File Types
+- **Images**: JPG, PNG, GIF, BMP, WEBP, SVG
+- **Documents**: PDF, DOC, DOCX, TXT, RTF  
+- **Audio**: MP3, WAV, FLAC, AAC
+- **Video**: MP4, AVI, MOV, MKV
+- **Archives**: ZIP, RAR, 7Z, TAR
+- **Any other file type with direct download links**
 # Screenshots
+
 ## RUN PROGRAM
 ![Run Program](https://github.com/ronknight/bulk_file_downloader/blob/master/assets/run-program.png "")
 
@@ -37,6 +90,31 @@ execute-download.py
 
 ## AFTER DOWNLOAD
 ![After Download](https://github.com/ronknight/bulk_file_downloader/blob/master/assets/after-download.png "")
+
+## Error Handling
+
+The downloader includes robust error handling for common issues:
+
+- **Network Errors**: Automatic timeout protection (30 seconds)
+- **HTTP Errors**: Proper handling of 404, 403, and other HTTP status codes
+- **File Errors**: Protection against permission issues and disk space problems
+- **Invalid URLs**: Graceful handling of malformed URLs
+- **Missing Files**: Clear error message when `files.txt` is not found
+
+### Common Issues
+
+**Files not downloading?**
+- Check that URLs in `files.txt` are valid and accessible
+- Ensure you have write permissions in the directory
+- Verify your internet connection
+
+**Timeout errors?**
+- Some servers may be slow; the 30-second timeout should handle most cases
+- Try downloading fewer files at once if experiencing consistent timeouts
+
+**Permission errors?**
+- Run the terminal as administrator (Windows) or use `sudo` (Linux/Mac)
+- Check that the destination directory is writable
 
 
 
