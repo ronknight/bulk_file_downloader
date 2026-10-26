@@ -1,0 +1,11 @@
+schema: spec-driven
+
+# Project context (optional) - shown to AI when creating artifacts.
+# context: |
+#   Tech stack: ...
+#   Conventions: ...
+
+# Per-artifact rules (optional)
+# rules:
+#   proposal:
+#     - Keep proposals under 500 words

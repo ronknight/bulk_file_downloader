@@ -1,0 +1,9 @@
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local restore snapshots (kept out of git to avoid bloat)
+archive/
+output/
